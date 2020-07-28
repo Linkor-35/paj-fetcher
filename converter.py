@@ -1,33 +1,5 @@
 #! /usr/bin/env python3
 
-
-# {{ cookiecutter.provider_slug }}-fetcher -- Download and convert data from {{ cookiecutter.provider_code }}
-# By: {{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>
-#
-# Copyright (C) {% now 'utc', '%Y' %} Cepremap
-# https://git.nomics.world/dbnomics-fetchers/{{ cookiecutter.provider_slug }}-fetcher
-#
-# {{ cookiecutter.provider_slug }}-fetcher is free software; you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as
-# published by the Free Software Foundation, either version 3 of the
-# License, or (at your option) any later version.
-#
-# {{ cookiecutter.provider_slug }}-fetcher is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-
-"""Convert data from {{ cookiecutter.provider_code }} to DBnomics data model (see https://git.nomics.world/dbnomics/dbnomics-data-model/).
-
-Read source data from a source directory, write converted data to a target directory.
-
-See also `.gitlab-ci.yml` in which data is committed to a Git repository of converted data.
-"""
-
 import argparse
 import json
 import logging
@@ -78,7 +50,6 @@ def convert_data():
     pass
 
 
-
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('source_dir', type=Path, help='path of source directory')
@@ -106,6 +77,8 @@ def main():
     nb_expected_datasets = 0
     errors_artifact = ErrorsArtifact()
 
+    # =====================================================
+    #  CONVERT DATA HERE
     # =====================================================
 
     for dataset in iterate_datasets():

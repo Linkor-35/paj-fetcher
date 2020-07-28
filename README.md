@@ -1,6 +1,3 @@
-Михаил, добрый день!
-Вот описание проекта:
- 
 - The deliverable is to implement a data scraper using https://git.nomics.world/explore/groups and https://db.nomics.world library
 
 - The target provider is https://www.paj.gr.jp/english/statis/  (это один из примеров сайта)
